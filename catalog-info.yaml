@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: fx9e5a7fd-nodejs-gitops
+  description: This is GitOps manifest for fx9e5a7fd-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=fx9e5a7fd-nodejs
+    backstage.io/kubernetes-id: fx9e5a7fd-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: fx9e5a7fd-nodejs
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:fx9e5a7fd-nodejs
